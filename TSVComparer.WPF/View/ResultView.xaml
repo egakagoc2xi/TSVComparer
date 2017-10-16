@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="TSVComparer.WPF.View.ResultView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:Toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
+             xmlns:local="clr-namespace:TSVComparer.WPF.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"></ColumnDefinition>
+            <ColumnDefinition Width="33*"></ColumnDefinition>
+            <ColumnDefinition Width="33*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*" ></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Toolkit:DataGrid x:Name="dgRenamedGrid" Margin="5" Grid.Column="2" Grid.Row="0" ItemsSource="{Binding Path=RenamedChannelInformation}" AutoGenerateColumns="False" RowDetailsVisibilityMode="Collapsed" IsReadOnly="True" CanUserAddRows="False">
+            <Toolkit:DataGrid.Columns >
+                <Toolkit:DataGridTextColumn Header="# Canal"  Binding="{Binding Path=ChannelNumber}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Nombre Canal"  Binding="{Binding Path=ChannelName}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Nombre Anterior"  Binding="{Binding Path=PreviousChannelName}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Market"  Binding="{Binding Path=Market}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Red"  Binding="{Binding Path=NetworkDestination}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="TID"  Binding="{Binding Path=TidDestination}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="TP"  Binding="{Binding Path=TransponderDestination}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="VPID"  Binding="{Binding Path=VPidDestination}"      Width="90"  />
+            </Toolkit:DataGrid.Columns>
+        </Toolkit:DataGrid>
+        <Toolkit:DataGrid  x:Name="dgRemovedGrid" Margin="5" Grid.Column="1" Grid.Row="0"  ItemsSource="{Binding Path=RemovedChannelInformation}" AutoGenerateColumns="False" RowDetailsVisibilityMode="Collapsed" IsReadOnly="True" CanUserAddRows="False">
+            <Toolkit:DataGrid.Columns >
+                <Toolkit:DataGridTextColumn Header="# Canal"  Binding="{Binding Path=ChannelNumber}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Canal"  Binding="{Binding Path=ChannelName}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Market"  Binding="{Binding Path=Market}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Red"  Binding="{Binding Path=NetworkOriginal}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="TID"  Binding="{Binding Path=TidOriginal}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="TP"  Binding="{Binding Path=TransponderOriginal}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="VPID"  Binding="{Binding Path=VPidOriginal}"      Width="90"  />
+            </Toolkit:DataGrid.Columns>
+        </Toolkit:DataGrid>
+        <Toolkit:DataGrid  x:Name="dgAddedGrid" Margin="5" Grid.Column="0" Grid.Row="0"  ItemsSource="{Binding Path=AddedChannelInformation}" AutoGenerateColumns="False" RowDetailsVisibilityMode="Collapsed" IsReadOnly="True" CanUserAddRows="False">
+            <Toolkit:DataGrid.Columns >
+                <Toolkit:DataGridTextColumn Header="# Canal"  Binding="{Binding Path=ChannelNumber}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Canal"  Binding="{Binding Path=ChannelName}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Market"  Binding="{Binding Path=Market}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Red"  Binding="{Binding Path=NetworkDestination}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="TID"  Binding="{Binding Path=TidDestination}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="TP"  Binding="{Binding Path=TransponderDestination}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="VPID"  Binding="{Binding Path=VPidDestination}"      Width="90"  />
+            </Toolkit:DataGrid.Columns>
+        </Toolkit:DataGrid>
+        <Toolkit:DataGrid  x:Name="dgRemmapedGrid" Margin="5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"  ItemsSource="{Binding Path=RemapedChannelInformation}" AutoGenerateColumns="False" RowDetailsVisibilityMode="Collapsed" IsReadOnly="True" CanUserAddRows="False">
+            <Toolkit:DataGrid.Columns >
+                <Toolkit:DataGridTextColumn Header="# Canal"  Binding="{Binding Path=ChannelNumber}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Canal"  Binding="{Binding Path=ChannelName}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Market"  Binding="{Binding Path=Market}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Red"  Binding="{Binding Path=NetworkDestination}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="Red Anterior"  Binding="{Binding Path=NetworkOriginal}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="TID"  Binding="{Binding Path=TidDestination}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="TID Anterior"  Binding="{Binding Path=TidOriginal}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="TP"  Binding="{Binding Path=TransponderDestination}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="TP Anterior"  Binding="{Binding Path=TransponderOriginal}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="VPID"  Binding="{Binding Path=VPidDestination}"      Width="90"  />
+                <Toolkit:DataGridTextColumn Header="VPID Anterior"  Binding="{Binding Path=VPidOriginal}"      Width="200"  />
+            </Toolkit:DataGrid.Columns>
+        </Toolkit:DataGrid>
+    </Grid>
+</UserControl>

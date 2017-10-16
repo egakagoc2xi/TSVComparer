@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="TSVComparer.WPF.View.MainWindowView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TSVComparer.WPF.View"
+             xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
+             xmlns:Views="clr-namespace:TSVComparer.WPF.View"
+             xmlns:ViewModel="clr-namespace:TSVComparer.WPF.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Expander Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsExpanded="True">
+            <GroupBox  Header="Information" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"></RowDefinition>
+                        <RowDefinition Height="50*" ></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Margin="5" Content="Original Directory"/>
+                    <Label Grid.Row="1" Grid.Column="0" Margin="5" Content="Comparisson Directory"/>
+
+                    <TextBox x:Name="txtOriginalDirectory" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding Path=OriginalDirectoryProperty,Mode=TwoWay}" />
+                    <TextBox x:Name="txtCompareToDirectory" Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding Path=CompareDirectoryProperty,Mode=TwoWay}" />
+
+                    <Button x:Name="btnLoadOrginalFile" Grid.Row="0" Grid.Column="2" Margin="5" Grid.RowSpan="1" Content="Load Original File" Command="{Binding Path=LoadOrginalFileCommand}" ></Button>
+                    <Button x:Name="btnLoadComparissonFile" Grid.Row="1" Grid.Column="2" Margin="5" Grid.RowSpan="1" Content="Load Comparisson File" Command="{Binding Path=LoadComparissonFileCommand}"  ></Button>
+                    <Button x:Name="btnCompare" Grid.Row="0" Grid.Column="4" Margin="5" Grid.RowSpan="1" Content="Compare" Command="{Binding Path=CompareCommand}" ></Button>
+                    <Button x:Name="btnClean" Grid.Row="1" Grid.Column="4" Margin="5" Grid.RowSpan="1" Content="Clean" Command="{Binding Path=CleanCommand}" ></Button>
+                    <Button x:Name="btnTSVFile" Grid.Row="0" Grid.Column="5" Margin="5" Content="Dump TSV" Command="{Binding Path=TSVSaveFileCommand}" ></Button>
+                    <Button x:Name="btnBBCode" Grid.Row="1" Grid.Column="5" Margin="5" Visibility="Hidden" Content="Dump BBCode" Command="{Binding Path=BBCodeSaveFileCommand}" ></Button>
+                    <Button x:Name="btnhtmlCode" Grid.Row="0" Grid.Column="6" Margin="5" Content="Dump Html" Command="{Binding Path=HtmlSaveFileCommand}" ></Button>
+                    <Button x:Name="btnexcelCode" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="2" Margin="5" Content="Dump Excel" Command="{Binding Path=ExcelSaveFileCommand}" ></Button>
+
+                    <GroupBox Grid.Column="3" Grid.Row="0" Grid.RowSpan="2"  Margin="5" Header="Information" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Vertical">
+                            <RadioButton x:Name="rbDssTableExplorer" Content="DssTableExplorer" IsChecked="{Binding Path=IsDssTableExplorerProperty, Mode=TwoWay}"/>
+                            <RadioButton x:Name="rbStbcanner" Visibility="Hidden" Content="STB Scanner" IsChecked="{Binding Path=IsSTBScannerProperty, Mode=TwoWay}"/>
+                            <RadioButton x:Name="rbGCT" Content="GCT File" IsChecked="{Binding Path=IsGCTProperty, Mode=TwoWay}"/>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </GroupBox>
+        </Expander>
+        <TabControl Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <TabItem Header="Original File">
+                <Views:ChannelListView DataContext="{Binding Path=OriginalChannelListViewModelProperty}"></Views:ChannelListView>
+            </TabItem>
+            <TabItem Header="Comparisson File">
+                <Views:ChannelListView DataContext="{Binding Path=CompareChannelListViewModelProperty}"></Views:ChannelListView>
+            </TabItem>
+            <TabItem Header="Output File">
+                <Views:ResultView DataContext="{Binding Path=ResultViewModelProperty}"></Views:ResultView>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

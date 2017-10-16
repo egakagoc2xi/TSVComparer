@@ -4,9 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TSVComparer.WPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        xmlns:Views="clr-namespace:TSVComparer.WPF.View"
+        xmlns:ViewModel="clr-namespace:TSVComparer.WPF.ViewModel"
+         Title="TsvComparer" WindowStartupLocation="CenterOwner" WindowState="Maximized">
+    <Views:MainWindowView x:Name="usrMainWindows"></Views:MainWindowView>
 </Window>
