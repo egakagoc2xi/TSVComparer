@@ -2,13 +2,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27009.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSVComparer.Model", "TSVComparer.Model\TSVComparer.Model.csproj", "{5E9987F1-341A-4480-B98F-20AAFF653B33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSVComparer.Model", "TSVComparer.Model\TSVComparer.Model.csproj", "{5E9987F1-341A-4480-B98F-20AAFF653B33}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSVComparer.ViewModel", "TSVComparer.ViewModel\TSVComparer.ViewModel.csproj", "{FE086936-FEC6-4DD0-BC52-38A87A069275}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSVComparer.ViewModel", "TSVComparer.ViewModel\TSVComparer.ViewModel.csproj", "{FE086936-FEC6-4DD0-BC52-38A87A069275}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSVComparer.WPF", "TSVComparer.WPF\TSVComparer.WPF.csproj", "{E34C419B-4384-476B-BC40-E614FE984488}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSVComparer.UWP", "TSVComparer.UWP\TSVComparer.UWP.csproj", "{62326B8A-34E5-4C0A-9A6A-15122A832F1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSVComparer.Batch", "TSVComparer.Batch\TSVComparer.Batch.csproj", "{C563D90F-A56B-42EE-B54A-4FB9ED14E747}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,6 +92,22 @@ Global
 		{62326B8A-34E5-4C0A-9A6A-15122A832F1D}.Release|x86.ActiveCfg = Release|x86
 		{62326B8A-34E5-4C0A-9A6A-15122A832F1D}.Release|x86.Build.0 = Release|x86
 		{62326B8A-34E5-4C0A-9A6A-15122A832F1D}.Release|x86.Deploy.0 = Release|x86
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Debug|ARM.Build.0 = Debug|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Debug|x64.Build.0 = Debug|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Debug|x86.Build.0 = Debug|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Release|ARM.ActiveCfg = Release|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Release|ARM.Build.0 = Release|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Release|x64.ActiveCfg = Release|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Release|x64.Build.0 = Release|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Release|x86.ActiveCfg = Release|Any CPU
+		{C563D90F-A56B-42EE-B54A-4FB9ED14E747}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
