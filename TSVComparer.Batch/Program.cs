@@ -62,9 +62,9 @@ namespace TSVComparer.Batch
                             case "--help":
                                 System.Console.WriteLine("These are the parameter available for use:");
                                 System.Console.WriteLine("-s: Type of source availables (DSSTE|GCT|STB)");
-                                System.Console.WriteLine("-if (Optional): Path of the Original Folder");
-                                System.Console.WriteLine("-cf (Optional): Path of the Folder to Compare");
-                                System.Console.WriteLine("-of (Optional): Path of the Ouput Folder");
+                                System.Console.WriteLine("-if (Optional): Path of the Original Folder - Default Folder: " + Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "original");
+                                System.Console.WriteLine("-cf (Optional): Path of the Folder to Compare - Default Folder: " + Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "compare");
+                                System.Console.WriteLine("-of (Optional): Path of the Ouput Folder - Default Folder: " + Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "ouput");
                                 System.Console.WriteLine("-to: Type if Output (HTML|Excel|TSV)");
                                 System.Console.WriteLine("Note: All Parameters and options are case sensitive");
 
@@ -75,7 +75,19 @@ namespace TSVComparer.Batch
                     }
                     if (compareInformation != null)
                     {
-                       
+
+
+                        if (String.IsNullOrEmpty(compareInformation.OutputFolder)){
+                            compareInformation.OutputFolder = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "ouput";
+                            
+                        }
+                        if (String.IsNullOrEmpty(compareInformation.CompareFolder)) { 
+                            compareInformation.CompareFolder = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "compare";
+                        }
+
+                        if (String.IsNullOrEmpty(compareInformation.OriginalFolder)) { 
+                            compareInformation.OriginalFolder = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "original";
+                        }
 
                         new ConsoleViewModel(String.Empty, String.Empty).BatchProcess(compareInformation);
                     }
@@ -90,8 +102,6 @@ namespace TSVComparer.Batch
             else {
                 System.Console.WriteLine("Invalid Argument Exception: One or more Arguments were need");
             }
-            System.Console.WriteLine(Directory.GetCurrentDirectory());
-            System.Console.ReadLine();
         }
     }
 }
