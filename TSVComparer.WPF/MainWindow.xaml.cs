@@ -14,7 +14,7 @@ namespace TSVComparer.WPF
         {
             InitializeComponent();
 
-            MainWindowViewModel _viewModel = new MainWindowViewModel();
+            MainWindowViewModel _viewModel = new MainWindowViewModel(String.Empty, String.Empty);
             usrMainWindows.DataContext = _viewModel;
 
             Version a = Assembly.GetEntryAssembly().GetName().Version;
