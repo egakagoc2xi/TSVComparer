@@ -18,7 +18,7 @@ namespace TSVComparer.ViewModel
     {
         protected virtual void ExcelSaveFileCommandExecute(String pPath, Boolean pOutputFullExcelFile)
         {
-            if (!pPath.Substring(pPath.Length - 1, 1).Equals("/")) pPath += "/";
+            if (!pPath.Substring(pPath.Length - 1, 1).Equals(Path.DirectorySeparatorChar)) pPath += Path.DirectorySeparatorChar;
             String path = pPath + DateTime.Now.ToString("yyMMddHHmmss") + "_TsvComparer.xlsx";
             FileInfo fileInfo = new FileInfo(path);
 
@@ -64,7 +64,7 @@ namespace TSVComparer.ViewModel
 
         protected virtual void HtmlSaveFileCommandExecute(String pPath)
         {
-            if (!pPath.Substring(pPath.Length - 1, 1).Equals("/")) pPath += "/";
+            if (!pPath.Substring(pPath.Length - 1, 1).Equals(Path.DirectorySeparatorChar)) pPath += Path.DirectorySeparatorChar;
             String path = pPath + DateTime.Now.ToString("yyMMddHHmmss") + "_TsvComparer.html";
 
             StreamWriter writer = new StreamWriter(File.Create(path));
@@ -112,7 +112,7 @@ namespace TSVComparer.ViewModel
         {
             try
             {
-                if (!pPath.Substring(pPath.Length - 1, 1).Equals("/")) pPath += "/";
+                if (!pPath.Substring(pPath.Length - 1, 1).Equals(Path.DirectorySeparatorChar)) pPath += Path.DirectorySeparatorChar;
                 String path = pPath + DateTime.Now.ToString("yyMMddHHmmss") + "_TsvComparerBBCode.bbc";
 
                 //this.SetLog("Dumping File: " + path);
@@ -255,7 +255,7 @@ namespace TSVComparer.ViewModel
         {
             try
             {
-                if (!pPath.Substring(pPath.Length - 1, 1).Equals("/")) pPath += "/";
+                if (!pPath.Substring(pPath.Length - 1, 1).Equals(Path.DirectorySeparatorChar)) pPath += Path.DirectorySeparatorChar;
 
                 String path = pPath + DateTime.Now.ToString("yyMMddHHmmss") + "_TsvComparer.tsv";
                 //this.SetLog("Dumping File: " + path);

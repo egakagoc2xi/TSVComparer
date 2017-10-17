@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TSVComparer.Batch": {
+      "commandName": "Project",
+      "commandLineArgs": "-s GCT  -to HTML -if C:\\Users\\Eduar\\source\\repos\\TSVComparer\\TSVComparer.Batch\\bin\\Debug\\netcoreapp2.0\\original\\  -cf C:\\Users\\Eduar\\source\\repos\\TSVComparer\\TSVComparer.Batch\\bin\\Debug\\netcoreapp2.0\\compare\\ -of C:\\Users\\Eduar\\source\\repos\\TSVComparer\\TSVComparer.Batch\\bin\\Debug\\netcoreapp2.0\\output\\"
+    }
+  }
+}
